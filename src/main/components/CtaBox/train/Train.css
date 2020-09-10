@@ -1,0 +1,17 @@
+.train-line{
+    margin: 2px;
+    font-family: Cambria;
+    font-size: 14px;
+    border-width: 2px;
+    border-color: #282c34;
+    border-radius: 8px;
+}
+
+.dest{
+    font-size: 12px!important;
+}
+
+.eta{
+
+    font-size: 12px!important;
+}

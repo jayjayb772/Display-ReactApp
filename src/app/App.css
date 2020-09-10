@@ -1,4 +1,5 @@
 .App {
+  width: auto;
   text-align: center;
 }
 
@@ -35,4 +36,25 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.quadrant-left{
+
+  border-color: #282c34;
+  height: 100%;
+  padding: 20% 15% 20% 0%;
+}
+
+.quadrant-right{
+
+  border-color: #282c34;
+  height: 100%;
+  padding: 20% 0% 20% 15%;
+}
+.TopBox{
+  padding: 2% 0;
+}
+
+.BottomBox{
+  padding: 2% 0;
 }
