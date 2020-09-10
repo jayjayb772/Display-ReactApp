@@ -7,33 +7,38 @@ function CtaBox() {
     const [error, setError] = useState("");
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
-        let a =`${process.env.REACT_APP_ORCHURL}/cta/train-times`
-        fetch(a)
-            .then(res => res.json())
-            .then(data => {
-                console.log("here")
-                console.log(data)
-                let ex = []
-                if (data["Train 1"] === undefined) {
-                    setError("No trains now")
-                } else {
-                    ex.push(data["Train 1"]);
-                    if (data["Train 3"] !== undefined) {
-                        ex.push(data["Train 3"]);
+        function doStuff() {
+            let a = `${process.env.REACT_APP_ORCHURL}/cta/train-times`
+            fetch(a)
+                .then(res => res.json())
+                .then(data => {
+                    console.log("here")
+                    console.log(data)
+                    let ex = []
+                    if (data["Train 1"] === undefined) {
+                        setError("No trains now")
+                    } else {
+                        ex.push(data["Train 1"]);
+                        if (data["Train 3"] !== undefined) {
+                            ex.push(data["Train 3"]);
+                        }
+                        if (data["Train 2"] !== undefined) {
+                            ex.push(data["Train 2"]);
+                        }
+                        if (data["Train 4"] !== undefined) {
+                            ex.push(data["Train 4"]);
+                        }
+                        setTrains(ex);
+                        setIsLoaded(true)
                     }
-                    if (data["Train 2"] !== undefined) {
-                        ex.push(data["Train 2"]);
-                    }
-                    if (data["Train 4"] !== undefined) {
-                        ex.push(data["Train 4"]);
-                    }
-                    setTrains(ex);
-                    setIsLoaded(true)
-                }
-            })
-
+                })
+        };
+        doStuff();
         const interval = setInterval(() => {
             setError("")
+            setTrains([]);
+            setIsLoaded(false)
+            doStuff();
             console.log('This will run every minute!');
         }, 60000);
         return () => clearInterval(interval);
