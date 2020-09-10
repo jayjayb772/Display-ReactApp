@@ -4,16 +4,19 @@ import Train from "./train/Train";
 
 function CtaBox(){
     const [trains, setTrains] = useState([])
-    const [error, setError] = useState(null);
+    const [error, setError] = useState("");
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-            fetch(`http://localhost:8080/cta/train-times?name=Belmont&color=Blue`)
+            fetch(`${process.env.ORCHURL}/cta/train-times`)
                 .then(res=>res.json())
                 .then(data=>{
                 console.log("here")
                 console.log(data)
                 let ex = []
+                if(data["Train 1"] ===undefined){
+                   setError("No trains now")
+                }else{
                 ex.push(data["Train 1"]);
                     if(data["Train 3"] !== undefined){
                         ex.push(data["Train 3"]);
@@ -26,19 +29,22 @@ function CtaBox(){
                     }
                 setTrains(ex);
                 setIsLoaded(true)
+               }
             })
 
         const interval = setInterval(() => {
+            setError("")
             console.log('This will run every minute!');
         }, 60000);
         return () => clearInterval(interval);
 
     }, [])
-
-   if (!isLoaded) {
+   if(error !== ""){
+     return <div className="Error">{error}</div>
+   }else{
+     if (!isLoaded) {
         return <div>Loading...</div>;
-    } else {
-
+     } else {
         return (
             <div>
                 {console.log("IN DIV")}
@@ -47,7 +53,8 @@ function CtaBox(){
                 ))}
             </div>
         );
-    }
+     }
+   }
 }
 
 
