@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../logo.svg';
 import './App.css';
 import {Col, Row} from "react-flexbox-grid";
 import CtaBox from "../main/components/CtaBox/CtaBox";
