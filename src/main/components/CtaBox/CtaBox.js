@@ -19,11 +19,11 @@ function CtaBox() {
                         setError("No trains now")
                     } else {
                         ex.push(data["Train 1"]);
-                        if (data["Train 3"] !== undefined) {
-                            ex.push(data["Train 3"]);
-                        }
                         if (data["Train 2"] !== undefined) {
                             ex.push(data["Train 2"]);
+                        }
+                        if (data["Train 3"] !== undefined) {
+                            ex.push(data["Train 3"]);
                         }
                         if (data["Train 4"] !== undefined) {
                             ex.push(data["Train 4"]);
