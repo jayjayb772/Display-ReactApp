@@ -7,7 +7,7 @@ function CtaBox() {
     const [error, setError] = useState("");
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
-        async function doStuff() {
+        function doStuff() {
             let a = `${process.env.REACT_APP_ORCHURL}/cta/train-times`
             fetch(a)
                 .then(res=> {return res.text()})
