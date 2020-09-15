@@ -10,9 +10,11 @@ function CtaBox() {
         async function doStuff() {
             let a = `${process.env.REACT_APP_ORCHURL}/cta/train-times`
             fetch(a)
-                .then(res=> res.json())
+                .then(res=> res.text())
                 .then(data => {
                     console.log("here")
+                    console.log(data)
+                    data = data.json()
                     console.log(data)
                     let ex = []
                     if (data["Train 1"] === undefined) {
