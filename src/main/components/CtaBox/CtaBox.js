@@ -9,6 +9,7 @@ function CtaBox() {
     useEffect(() => {
         function doStuff() {
             let a = `${process.env.REACT_APP_ORCHURL}/cta/train-times`
+            console.log(a);
             fetch(a)
                 .then(res => res.json())
                 .then(data => {
