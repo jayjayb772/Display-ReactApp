@@ -9,7 +9,7 @@ function CtaBox() {
     useEffect(() => {
         async function doStuff() {
             let a = `${process.env.REACT_APP_ORCHURL}/cta/train-times`
-            await fetch(a)
+            fetch(a)
                 .then(data => {
                     console.log("here")
                     console.log(data)
