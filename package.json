@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.2.1",
     "dotenv": "^8.2.0",
     "react": "^16.13.1",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-flexbox-grid": "^2.1.2",
     "react-native-dotenv": "^2.4.0",
@@ -49,5 +51,8 @@
     [
       "module:react-native-dotenv"
     ]
-  ]
+  ],
+  "devDependencies": {
+    "styled-components": "^5.2.0"
+  }
 }

@@ -2,14 +2,16 @@ import React from 'react';
 import './App.css';
 import {Col, Row} from "react-flexbox-grid";
 import CtaBox from "../main/components/CtaBox/CtaBox";
+import { bounceInRight } from 'react-animations'
 let num = 5
 
 function App() {
+
     return (
         <div className="App">
             <div className="MainBox">
                 <Row middle="xs" center="xs" around="xs" className="TopBox">
-                    <Col xs={num} className="quadrant-left">
+                    <Col xs={num} className="quadrant-left" >
                         Train Times!
                         <CtaBox/>
                     </Col>

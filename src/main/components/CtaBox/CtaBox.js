@@ -10,7 +10,6 @@ function CtaBox() {
         function doStuff() {
             let a = `${process.env.REACT_APP_ORCHURL}/cta/train-times`
             fetch(a)
-                .then(res => res.json())
                 .then(data => {
                     console.log("here")
                     console.log(data)
