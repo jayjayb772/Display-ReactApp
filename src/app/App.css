@@ -42,19 +42,19 @@
 
   border-color: #282c34;
   height: 100%;
-  padding: 10% 15% 10% 0%;
+  padding: 20% 15% 20% 0%;
 }
 
 .quadrant-right{
 
   border-color: #282c34;
   height: 100%;
-  padding: 10% 0% 10% 15%;
+  padding: 20% 0% 20% 15%;
 }
 .TopBox{
-  padding: 0 0 5% 0;
+  padding: 0 0 10% 0;
 }
 
 .BottomBox{
-  padding: 5% 0 0 0;
+  padding: 10% 0 0 0;
 }
