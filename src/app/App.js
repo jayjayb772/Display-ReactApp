@@ -13,21 +13,21 @@ function App() {
             <div className="MainBox">
                 <Row middle="xs" center="xs" around="xs" className="TopBox">
                     <Col xs={num} className="quadrant-left CTA" >
-                        Montrose Times!
+                        Montrose
                         <CtaBox stop="Montrose" color="Brown" dir="left"/>
                     </Col>
                     <Col xs={num} className="quadrant-right CTA">
-                        Fullerton Times!
+                        Fullerton
                         <CtaBox stop="Fullerton" color="Red" dir="right"/>
                     </Col>
                 </Row>
                 <Row middle="xs" center="xs" around="xs" className="BottomBox">
                     <Col xs={num} className="quadrant-left CTA">
-                        Jackson Times!
+                        Jackson
                         <CtaBox stop="Jackson" color="Red" dir="left"/>
                     </Col>
                     <Col xs={num} className="quadrant-right CTA">
-                        Southport Times!
+                        Southport
                         <CtaBox stop="Southport" color="Brown" dir="right"/>
                     </Col>
                 </Row>
