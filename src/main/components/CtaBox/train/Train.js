@@ -12,13 +12,13 @@ function Train(trainInfo){
     return (
         <Bounce>
 
-            <div className="train-line" style={{backgroundColor:trainInfo.trainInfo.colorHex}}>
-                {trainInfo.trainInfo.color} Line Train
-                <div className="dest">
-                    {trainInfo.trainInfo.dest.substring(15)}
-                </div>
+            <div className="dest" style={{backgroundColor:trainInfo.trainInfo.colorHex}}>
+                {trainInfo.trainInfo.dest.substring(15)}
                 <div className="eta">
                     {trainInfo.trainInfo.eta}
+                </div>
+                <div className="train-line">
+                    {trainInfo.trainInfo.color} Line Train
                 </div>
             </div>
         </Bounce>

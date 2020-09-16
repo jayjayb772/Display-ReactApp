@@ -1,18 +1,18 @@
 .train-line{
+    font-size: 12px!important;
+}
+
+.dest{
+    font-size: 24px;
     margin: 24px;
     color: white;
     font-family: Cambria;
-    font-size: 24px;
     border-width: 2px;
     border-color: #282c34;
     border-radius: 8px;
 }
 
-.dest{
-    font-size: 20px!important;
-}
-
 .eta{
 
-    font-size: 20px!important;
+    font-size: 16px!important;
 }
