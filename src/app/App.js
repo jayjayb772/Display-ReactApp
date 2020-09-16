@@ -14,11 +14,12 @@ function App() {
             <div className="MainBox">
                 <Row middle="xs" center="xs" around="xs" className="TopBox">
                     <Col xs={num} className="quadrant-left CTA" >
-                        Train Times!
-                        <CtaBox/>
+                        Montrose Times!
+                        <CtaBox stop="Montrose" color="Brown" dir="left"/>
                     </Col>
-                    <Col xs={num} className="quadrant-right">
-                        Box 2
+                    <Col xs={num} className="quadrant-right CTA">
+                        Fullerton Times!
+                        <CtaBox stop="Fullerton" color="Red" dir="right"/>
                     </Col>
                 </Row>
                 <Row middle="xs" center="xs" around="xs" className="BottomBox">

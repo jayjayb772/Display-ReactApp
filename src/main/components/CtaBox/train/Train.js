@@ -1,24 +1,31 @@
 import React from "react";
 import './Train.css';
 import styled, { keyframes } from 'styled-components';
-import {bounceInLeft, bounceOutRight} from "react-animations"
+import {bounceInLeft, bounceInRight} from "react-animations"
 import ScrollAnimation from 'react-animate-on-scroll';;
 
-const Bounce = styled.div`animation: 4s ${keyframes`${bounceInLeft}`} ease-in`;
 
-function Train(trainInfo){
+
+function Train(props){
+    let direction
+    if(props.dir==="left"){
+        direction = bounceInLeft;
+    }else{
+        direction = bounceInRight
+    }
+    const Bounce = styled.div`animation: 4s ${keyframes`${direction}`} ease-in`;
     console.log("HELLO")
-    console.log(trainInfo)
+    console.log(props)
     return (
         <Bounce>
 
-            <div className="dest" style={{backgroundColor:trainInfo.trainInfo.colorHex}}>
-                {trainInfo.trainInfo.dest.substring(15)}
+            <div className="dest" style={{backgroundColor:props.trainInfo.colorHex}}>
+                {props.trainInfo.dest.substring(15)}
                 <div className="eta">
-                    {trainInfo.trainInfo.eta}
+                    {props.trainInfo.eta}
                 </div>
                 <div className="train-line">
-                    {trainInfo.trainInfo.color} Line Train
+                    {props.trainInfo.color} Line Train
                 </div>
             </div>
         </Bounce>
