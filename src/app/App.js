@@ -9,8 +9,7 @@ let num = 5
 function App() {
 
     return (
-        <div className="App" >
-            <div className="bg">
+        <div className="App bg" >
             <div className="MainBox">
                 <Row middle="xs" center="xs" around="xs" className="TopBox">
                     <Col xs={num} className="quadrant-left CTA" >
@@ -23,14 +22,15 @@ function App() {
                     </Col>
                 </Row>
                 <Row middle="xs" center="xs" around="xs" className="BottomBox">
-                    <Col xs={num} className="quadrant-left">
-                        Box 3
+                    <Col xs={num} className="quadrant-left CTA">
+                        Jackson Times!
+                        <CtaBox stop="Jackson" color="Red" dir="left"/>
                     </Col>
-                    <Col xs={num} className="quadrant-right">
-                        Box 4
+                    <Col xs={num} className="quadrant-right CTA">
+                        Southport Times!
+                        <CtaBox stop="Southport" color="Brown" dir="right"/>
                     </Col>
                 </Row>
-            </div>
             </div>
         </div>
     );
