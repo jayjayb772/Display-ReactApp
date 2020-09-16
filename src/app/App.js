@@ -14,10 +14,10 @@ let style = {
 function App() {
 
     return (
-        <div className="App" style={style}>
+        <div className="App bg" >
             <div className="MainBox">
                 <Row middle="xs" center="xs" around="xs" className="TopBox">
-                    <Col xs={num} className="quadrant-left" >
+                    <Col xs={num} className="quadrant-left CTA" >
                         Train Times!
                         <CtaBox/>
                     </Col>
