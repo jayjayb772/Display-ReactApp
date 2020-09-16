@@ -1,7 +1,8 @@
 .App {
 
   text-align: center;
-  height:100%
+  height:auto;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -61,11 +62,13 @@
 }
 
 .bg{
-  background-image: url('../bg-img.jpg');
-  height:100%;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('../bg-img.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+  overflow: hidden;
+
 }
 
 .CTA{
@@ -75,4 +78,5 @@
   font-style: normal;
   font-variant: normal;
   font-weight: 700;
+
 }

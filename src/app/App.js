@@ -14,7 +14,8 @@ let style = {
 function App() {
 
     return (
-        <div className="App bg" >
+        <div className="App" >
+            <div className="bg">
             <div className="MainBox">
                 <Row middle="xs" center="xs" around="xs" className="TopBox">
                     <Col xs={num} className="quadrant-left CTA" >
@@ -33,6 +34,7 @@ function App() {
                         Box 4
                     </Col>
                 </Row>
+            </div>
             </div>
         </div>
     );
