@@ -18,8 +18,8 @@ function CtaBox(props) {
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
-                    console.log("here")
-                    console.log(data)
+                    //console.log("here")
+                    //console.log(data)
                     let ex = []
                     if (data["Train 1"] === undefined) {
                         setError("No trains now")
@@ -45,7 +45,7 @@ function CtaBox(props) {
             setTrains([]);
             setIsLoaded(false)
             doStuff();
-            console.log('This will run every minute!');
+            //console.log('This will run every minute!');
         }, 60000);
         return () => clearInterval(interval);
 
@@ -58,7 +58,6 @@ function CtaBox(props) {
         } else {
             return (
                 <div>
-                    {console.log("IN DIV")}
                     {trains.map(t => (
                         <Train key={t.arrTime} trainInfo={t} dir={props.dir}/>
                     ))}

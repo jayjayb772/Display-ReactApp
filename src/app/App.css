@@ -86,3 +86,17 @@
   font-weight: 700;
 
 }
+
+.Weather{
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 72px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+
+}
+
+.hide{
+  visibility: hidden;
+}
