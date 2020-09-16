@@ -27,7 +27,7 @@ function WeatherBox(props) {
             setIsLoaded(false)
             doStuff();
             console.log('This will run every minute!');
-        }, 60000);
+        }, 60000*60*3);
         return () => clearInterval(interval);
 
     }, [])
