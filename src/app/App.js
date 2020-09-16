@@ -3,10 +3,12 @@ import './App.css';
 import {Col, Row} from "react-flexbox-grid";
 import CtaBox from "../main/components/CtaBox/CtaBox";
 import { bounceInRight } from 'react-animations'
-import Background from '../bg-img.png';
+import Background from '../bg-img.jpg';
 let num = 5
 let style = {
-    backgroundImage: `url(${Background})`
+    backgroundImage: `url(${Background})`,
+    flex:1,
+    height:1920,
 }
 
 function App() {
