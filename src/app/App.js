@@ -5,11 +5,6 @@ import CtaBox from "../main/components/CtaBox/CtaBox";
 import { bounceInRight } from 'react-animations'
 import Background from '../bg-img.png';
 let num = 5
-let style = {
-    backgroundImage: `url(${Background})`,
-    flex:1,
-    height:1920,
-}
 
 function App() {
 
