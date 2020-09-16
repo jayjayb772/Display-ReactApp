@@ -41,6 +41,7 @@
   }
 }
 
+
 .quadrant-left{
 
   border-color: #282c34;
@@ -54,9 +55,13 @@
 }
 .TopBox{
   padding: 10% 0 11% 0;
+  flex: fit-content;
+  display: flex;
 }
 
 .BottomBox{
+  display: flex;
+  flex: fit-content;
   padding: 0 0 10% 0;
   overflow: hidden;
 }
