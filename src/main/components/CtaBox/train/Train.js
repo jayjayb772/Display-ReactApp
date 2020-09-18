@@ -29,7 +29,7 @@ function Train(props){
            first = false
             console.log("setting here")
             update()
-        }, 57000);
+        }, 57800);
         update()
         return () => clearInterval(interval);
 
