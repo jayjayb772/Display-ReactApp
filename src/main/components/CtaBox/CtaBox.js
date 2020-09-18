@@ -59,7 +59,7 @@ function CtaBox(props) {
             return (
                 <div>
                     {trains.map(t => (
-                        <Train key={t.arrTime} trainInfo={t} dir={props.dir}/>
+                        <Train key={t.arrTime} trainInfo={t}/>
                     ))}
                 </div>
             );

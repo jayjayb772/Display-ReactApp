@@ -24,7 +24,7 @@ function App() {
                     <Col xs={num} className="quadrant-right">
                         <div className="CTA">
                         Fullerton
-                        <CtaBox stop="Fullerton" color="Red" dir="right"/>
+                        <CtaBox stop="Fullerton" color="Red"/>
                         </div>
                     </Col>
                 </Row>
@@ -32,13 +32,13 @@ function App() {
                     <Col xs={num} className="quadrant-left">
                         <div className="Weather">
                             Chicago Forecast
-                            <WeatherBox city="Chicago" state="Illinois" dir="left"/>
+                            <WeatherBox city="Chicago" state="Illinois"/>
                         </div>
                     </Col>
                     <Col xs={num} className="quadrant-right">
                         <div className="CTA">
                         Southport
-                        <CtaBox stop="Southport" color="Brown" dir="right"/>
+                        <CtaBox stop="Southport" color="Brown"/>
                         </div>
                     </Col>
                 </Row>
