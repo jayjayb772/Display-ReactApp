@@ -67,7 +67,7 @@
 }
 
 .bg{
-  background: url('../bg-img.jpg') no-repeat center center fixed;
+  background: url('../resources/bg-img.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

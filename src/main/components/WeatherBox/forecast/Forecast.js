@@ -39,11 +39,21 @@ function Forecast(props){
         return () => clearInterval(interval);
 
     }, [])
+    let bg;
+    if(props.forecast.forecast === "Clouds"){
+        bg = "cloudy"
+    }else if(props.forecast.forecast === "Clear"){
+        bg = "clear"
+    }else if(props.forecast.forecast === "Rain"){
+        bg = "rain"
+    }else if(props.forecast.forecast === "Snow"){
+        bg = "snow"
+    }
 
     return (
         <Bounce>
 
-            <div className="temps" style={{backgroundColor:props.forecast.color}}>
+            <div className={`temps ${bg}`}>
                 {props.forecast.min_temp}&#176; - {props.forecast.max_temp}&#176;
                 <div className="date">
                     <Moment format="MMMM Do YYYY" interval={1000} tz="America/Chicago">
@@ -51,7 +61,7 @@ function Forecast(props){
                     </Moment>
                 </div>
                 <div className="desc">
-                    {props.forecast.desc}
+                    {props.forecast.forecast}
                 </div>
             </div>
         </Bounce>

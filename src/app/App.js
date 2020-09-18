@@ -3,7 +3,7 @@ import './App.css';
 import {Col, Row} from "react-flexbox-grid";
 import CtaBox from "../main/components/CtaBox/CtaBox";
 import { bounceInRight } from 'react-animations'
-import Background from '../bg-img.png';
+import Background from '../resources/bg-img.png';
 import WeatherBox from "../main/components/WeatherBox/WeatherBox";
 import TimeBlock from "../main/components/TimeBlock/TimeBlock";
 let num = 5
@@ -14,21 +14,6 @@ function App() {
         <div className="App bg" >
             <div className="MainBox">
                 <Row middle="xs" center="xs" around="xs" className="TopBox">
-                    <Col xs={num} className="quadrant-left" >
-                        <div className="CTA">
-                        Montrose
-                        <CtaBox stop="Montrose" color="Brown"/>
-                        </div>
-
-                    </Col>
-                    <Col xs={num} className="quadrant-right">
-                        <div className="CTA">
-                        Fullerton
-                        <CtaBox stop="Fullerton" color="Red"/>
-                        </div>
-                    </Col>
-                </Row>
-                <Row middle="xs" center="xs" around="xs" className="BottomBox">
                     <Col xs={num} className="quadrant-left">
                         <div className="Weather">
                             Chicago Forecast
@@ -37,8 +22,22 @@ function App() {
                     </Col>
                     <Col xs={num} className="quadrant-right">
                         <div className="CTA">
-                        Southport
-                        <CtaBox stop="Southport" color="Brown"/>
+                            Southport
+                            <CtaBox stop="Southport" color="Brown"/>
+                        </div>
+                    </Col>
+                </Row>
+                <Row middle="xs" center="xs" around="xs" className="BottomBox">
+                    <Col xs={num} className="quadrant-left" >
+                        <div className="CTA">
+                            Montrose
+                            <CtaBox stop="Montrose" color="Brown"/>
+                        </div>
+                    </Col>
+                    <Col xs={num} className="quadrant-right">
+                        <div className="CTA">
+                            Fullerton
+                            <CtaBox stop="Fullerton" color="Red"/>
                         </div>
                     </Col>
                 </Row>
