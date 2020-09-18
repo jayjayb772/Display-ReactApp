@@ -17,7 +17,7 @@ function App() {
                     <Col xs={num} className="quadrant-left" >
                         <div className="CTA">
                         Montrose
-                        <CtaBox stop="Montrose" color="Brown" dir="left"/>
+                        <CtaBox stop="Montrose" color="Brown"/>
                         </div>
 
                     </Col>

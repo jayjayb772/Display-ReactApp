@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './Forecast.css';
 import styled, {css, keyframes} from 'styled-components';
-import {bounceInLeft, bounceInRight, bounceOutLeft, bounceOutRight} from "react-animations"
+import {fadeIn, fadeOut} from "react-animations"
 import ScrollAnimation from 'react-animate-on-scroll';
 import Moment from "react-moment";
 
@@ -11,11 +11,7 @@ import Moment from "react-moment";
 
 function Forecast(props){
     let direction
-    if(props.dir==="left"){
-        direction = bounceInLeft;
-    }else{
-        direction = bounceInRight
-    }
+    direction= fadeIn
     console.log("HELLO")
     console.log(props)
     let [Bounce, setBounce] = useState(styled.div`animation: 4s ${keyframes`${direction}`} ease-in`)
@@ -23,11 +19,7 @@ function Forecast(props){
     function update() {
         console.log(first)
         if(first === false){
-            if(props.dir==="left"){
-                direction = bounceOutLeft;
-            }else{
-                direction = bounceOutRight
-            }
+            direction= fadeOut
             console.log("im here");
 
             const animation = props =>css`4s ${keyframes`${direction}`} ease-in`
