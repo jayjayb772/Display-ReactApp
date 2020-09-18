@@ -34,16 +34,16 @@ function CtaBox(props) {
                         if (data["Train 4"] !== undefined) {
                             ex.push(data["Train 4"]);
                         }
-                        setTrains(ex);
+                        setTrains([]);
                         setIsLoaded(true)
+                        setTrains(ex);
                     }
                 })
         };
         doStuff();
         const interval = setInterval(() => {
             setError("")
-            setTrains([]);
-            setIsLoaded(false)
+            //setIsLoaded(false)
             doStuff();
             //console.log('This will run every minute!');
         }, 60000);

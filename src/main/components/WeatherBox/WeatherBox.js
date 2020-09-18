@@ -15,19 +15,20 @@ function WeatherBox(props) {
                 .then(data => {
                     console.log("here")
                     console.log(data)
-                    setForecasts(data);
+                    setForecasts([]);
+
                     setIsLoaded(true)
+                    setForecasts(data);
 
                 })
         };
         doStuff();
         const interval = setInterval(() => {
             setError("")
-            setForecasts([]);
-            setIsLoaded(false)
+
             doStuff();
             console.log('This will run every minute!');
-        }, 60000*60*3);
+        }, 60000*60);
         return () => clearInterval(interval);
 
     }, [])

@@ -1,19 +1,48 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './Train.css';
-import styled, { keyframes } from 'styled-components';
-import {bounceInLeft, bounceInRight} from "react-animations"
+import styled, {css, keyframes} from 'styled-components';
+import {bounceInLeft, bounceInRight, bounceOutLeft, bounceOutRight} from "react-animations"
 import ScrollAnimation from 'react-animate-on-scroll';;
 
 
 
 function Train(props){
     let direction
+
     if(props.dir==="left"){
         direction = bounceInLeft;
     }else{
         direction = bounceInRight
     }
-    const Bounce = styled.div`animation: 4s ${keyframes`${direction}`} ease-in`;
+    let [Bounce, setBounce] = useState(styled.div`animation: 4s ${keyframes`${direction}`} ease-in`)
+    let [first, setFirst] = useState(true)
+    function update() {
+        console.log(first)
+        if(first === false){
+            if(props.dir==="left"){
+                direction = bounceOutLeft;
+            }else{
+                direction = bounceOutRight
+            }
+            console.log("im here");
+
+            const animation = props =>css`4s ${keyframes`${direction}`} ease-in`
+            setBounce(styled.div`animation: ${animation}`)
+
+            //setBounce(styled.div`animation: 4s ${keyframes`${direction}`} ease-in`)
+        }
+
+    };
+    useEffect(() => {
+        const interval = setInterval(() => {
+           first = false
+            console.log("setting here")
+            update()
+        }, 56000);
+        update()
+        return () => clearInterval(interval);
+
+    }, [])
     //console.log("HELLO")
     //console.log(props)
     return (
