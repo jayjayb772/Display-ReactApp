@@ -100,3 +100,14 @@
 .hide{
   visibility: hidden;
 }
+
+.TimeBlock{
+  margin: -20px 0 20px 0;
+  align-content: center;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 54px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+}

@@ -5,6 +5,7 @@ import CtaBox from "../main/components/CtaBox/CtaBox";
 import { bounceInRight } from 'react-animations'
 import Background from '../bg-img.png';
 import WeatherBox from "../main/components/WeatherBox/WeatherBox";
+import TimeBlock from "../main/components/TimeBlock/TimeBlock";
 let num = 5
 
 function App() {
@@ -38,6 +39,13 @@ function App() {
                         <div className="CTA">
                         Southport
                         <CtaBox stop="Southport" color="Brown" dir="right"/>
+                        </div>
+                    </Col>
+                </Row>
+                <Row middle="xs" center="xs" around="xs" className="TimeBlock">
+                    <Col>
+                        <div className="TimeBlock">
+                            <TimeBlock/>
                         </div>
                     </Col>
                 </Row>
