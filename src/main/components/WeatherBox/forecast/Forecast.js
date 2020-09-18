@@ -40,7 +40,7 @@ function Forecast(props){
 
     }, [])
     let bg;
-    if(props.forecast.forecast === "Clouds"){
+    if(props.forecast.forecast === "Cloudy"){
         bg = "cloudy"
     }else if(props.forecast.forecast === "Clear"){
         bg = "clear"
