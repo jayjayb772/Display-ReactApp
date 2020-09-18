@@ -14,20 +14,6 @@ function App() {
         <div className="App bg" >
             <div className="MainBox">
                 <Row middle="xs" center="xs" around="xs" className="TopBox">
-                    <Col xs={num} className="quadrant-left">
-                        <div className="Weather">
-                            Chicago Forecast
-                            <WeatherBox city="Chicago" state="Illinois"/>
-                        </div>
-                    </Col>
-                    <Col xs={num} className="quadrant-right">
-                        <div className="CTA">
-                            Southport
-                            <CtaBox stop="Southport" color="Brown"/>
-                        </div>
-                    </Col>
-                </Row>
-                <Row middle="xs" center="xs" around="xs" className="BottomBox">
                     <Col xs={num} className="quadrant-left" >
                         <div className="CTA">
                             Montrose
@@ -38,6 +24,20 @@ function App() {
                         <div className="CTA">
                             Fullerton
                             <CtaBox stop="Fullerton" color="Red"/>
+                        </div>
+                    </Col>
+                </Row>
+                <Row middle="xs" center="xs" around="xs" className="BottomBox">
+                    <Col xs={num} className="quadrant-left">
+                        <div className="Weather">
+                            Chicago Forecast
+                            <WeatherBox city="Chicago" state="Illinois"/>
+                        </div>
+                    </Col>
+                    <Col xs={num} className="quadrant-right">
+                        <div className="CTA">
+                            Southport
+                            <CtaBox stop="Southport" color="Brown"/>
                         </div>
                     </Col>
                 </Row>
