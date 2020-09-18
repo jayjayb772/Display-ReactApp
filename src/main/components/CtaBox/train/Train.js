@@ -17,7 +17,7 @@ function Train(props){
             direction= fadeOut
             console.log("im here");
 
-            const animation = props =>css`2s ${keyframes`${direction}`}`
+            const animation = props =>css`4s ${keyframes`${direction}`}`
             setBounce(styled.div`animation: ${animation}`)
 
             //setBounce(styled.div`animation: 4s ${keyframes`${direction}`} ease-in`)
@@ -29,7 +29,7 @@ function Train(props){
            first = false
             console.log("setting here")
             update()
-        }, 58000);
+        }, 56000);
         update()
         return () => clearInterval(interval);
 
