@@ -5,7 +5,7 @@
 .temps{
     margin: 20px;
 
-    color: white;
+    color: black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 36px;
     font-style: normal;
@@ -13,7 +13,7 @@
     font-weight: 700;
     padding: 0 10px 0px 10px;
     border-radius: 12px;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px white;
 }
 
 
