@@ -17,7 +17,7 @@ function Train(props){
             direction= fadeOut
             console.log("im here");
 
-            const animation = props =>css`4s ${keyframes`${direction}`}`
+            const animation = props =>css`4s ${keyframes`${direction} ease-in`}`
             setBounce(styled.div`animation: ${animation}`)
 
             //setBounce(styled.div`animation: 4s ${keyframes`${direction}`} ease-in`)
