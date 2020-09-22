@@ -16,7 +16,8 @@
     "react-live-clock": "^4.0.5",
     "react-native-dotenv": "^2.4.0",
     "react-scripts": "3.4.3",
-    "serve": "^11.3.2"
+    "serve": "^11.3.2",
+    "sockjs-client": "^1.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
