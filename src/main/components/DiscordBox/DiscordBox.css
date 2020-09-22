@@ -1,4 +1,6 @@
-.bg{
+.my-bg{
     border-radius: 12px;
     background-color: #282c34;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
