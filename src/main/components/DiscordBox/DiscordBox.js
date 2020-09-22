@@ -1,6 +1,7 @@
 import SockJS from 'sockjs-client'
 import React, {useEffect, useState} from "react";
 import Message from "./message/Message.js";
+import './DiscordBox.css';
 
 function DiscordBox(props){
     let [messages,setMessages] = useState([])
@@ -39,7 +40,7 @@ useEffect(()=>{
 }, []);
 if(isLoaded){
     return (
-        <div>
+        <div className="bg">
             {messages.map((m)=>(
                 <Message message={m.message} from={m.from}/>
                 )

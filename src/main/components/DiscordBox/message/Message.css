@@ -6,11 +6,15 @@
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
-    padding: 0 10px 10px 10px;
-    border-radius: 12px;
-    background-color: #282c34;
+    padding: 10px 10px 10px 10px;
 }
+
+
 
 .from{
     font-size: 12px!important;
+}
+
+.time{
+    font-size: 8px!important;
 }
