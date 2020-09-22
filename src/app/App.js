@@ -36,6 +36,7 @@ function App() {
                         </div>
                     </Col>
                     <Col xs={num} className="quadrant-right">
+
                         <div className="Discord">
                             Discord Messages
                             <DiscordBox/>
