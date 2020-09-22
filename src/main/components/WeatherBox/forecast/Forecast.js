@@ -32,6 +32,7 @@ function Forecast(props){
     useEffect(() => {
         const interval = setInterval(() => {
             first = false
+            setFirst(false)
             console.log("setting here")
             update()
         }, (60000*60)-4);

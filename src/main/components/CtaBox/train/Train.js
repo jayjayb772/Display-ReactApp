@@ -22,11 +22,12 @@ function Train(props){
 
             //setBounce(styled.div`animation: 4s ${keyframes`${direction}`} ease-in`)
         }
-
+        setFirst(false)
     };
     useEffect(() => {
         const interval = setInterval(() => {
            first = false
+
             console.log("setting here")
             update()
         }, 56500);
