@@ -2,18 +2,24 @@ import React, {useEffect, useState} from "react";
 import Train from "./train/Train";
 
 
-function CtaBox() {
+function CtaBox(props) {
     const [trains, setTrains] = useState([])
     const [error, setError] = useState("");
     const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
         function doStuff() {
-            let a = `${process.env.REACT_APP_ORCHURL}/cta/train-times`
-            fetch(a)
+            let url
+            if(props.stop!== null & props.color!==null) {
+                url = `${process.env.REACT_APP_ORCHURL}/cta/train-times?name=${props.stop}&color=${props.color}`
+            }else{
+                url = `${process.env.REACT_APP_ORCHURL}/cta/train-times`
+            }
+                console.log(url);
+            fetch(url)
                 .then(res => res.json())
                 .then(data => {
-                    console.log("here")
-                    console.log(data)
+                    //console.log("here")
+                    //console.log(data)
                     let ex = []
                     if (data["Train 1"] === undefined) {
                         setError("No trains now")
@@ -28,18 +34,18 @@ function CtaBox() {
                         if (data["Train 4"] !== undefined) {
                             ex.push(data["Train 4"]);
                         }
-                        setTrains(ex);
+                        setTrains([]);
                         setIsLoaded(true)
+                        setTrains(ex);
                     }
                 })
         };
         doStuff();
         const interval = setInterval(() => {
             setError("")
-            setTrains([]);
-            setIsLoaded(false)
+            //setIsLoaded(false)
             doStuff();
-            console.log('This will run every minute!');
+            //console.log('This will run every minute!');
         }, 60000);
         return () => clearInterval(interval);
 
@@ -52,7 +58,6 @@ function CtaBox() {
         } else {
             return (
                 <div>
-                    {console.log("IN DIV")}
                     {trains.map(t => (
                         <Train key={t.arrTime} trainInfo={t}/>
                     ))}

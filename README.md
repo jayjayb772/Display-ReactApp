@@ -1,3 +1,6 @@
+soon to implement for messages https://www.npmjs.com/package/react-speech
+
+
 #react web app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

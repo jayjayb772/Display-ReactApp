@@ -1,21 +1,20 @@
-.train-line{
-    font-size: 14px!important;
-}
-
-.dest{
-
+.message{
     margin: 28px;
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 34px;
+    font-size: 16px;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
-    padding: 0 10px 10px 10px;
-    border-radius: 12px;
+    padding: 10px 10px 10px 10px;
 }
 
-.eta{
 
-    font-size: 24px!important;
+
+.from{
+    font-size: 12px!important;
+}
+
+.time{
+    font-size: 8px!important;
 }

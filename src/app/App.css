@@ -1,6 +1,9 @@
 .App {
-  width: auto;
+
   text-align: center;
+  overflow: hidden;
+  background-color: black;
+  height: 100vh;
 }
 
 .App-logo {
@@ -38,23 +41,84 @@
   }
 }
 
+
 .quadrant-left{
 
   border-color: #282c34;
   height: 100%;
-  padding: 20% 15% 20% 0%;
 }
 
 .quadrant-right{
 
   border-color: #282c34;
   height: 100%;
-  padding: 20% 0% 20% 15%;
 }
 .TopBox{
-  padding: 10% 0;
+  padding: 10% 0 11% 0;
+  flex: fit-content;
+  display: flex;
 }
 
 .BottomBox{
-  padding: 10% 0;
+  display: flex;
+  flex: fit-content;
+  padding: 0 0 10% 0;
+  overflow: hidden;
+}
+
+.bg{
+  background: url('../resources/bg-img.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+  display: block;
+
+}
+
+.CTA{
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 72px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  height: available;
+
+}
+
+.Weather{
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 72px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+
+}
+
+.hide{
+  visibility: hidden;
+}
+
+.TimeBlock{
+  margin: -25px 0 20px 0;
+  align-content: center;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 54px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+}
+
+.Discord{
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 72px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  height: available;
 }

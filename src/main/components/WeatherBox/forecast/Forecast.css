@@ -1,0 +1,40 @@
+.desc{
+    font-size: 28px!important;
+}
+
+.temps{
+    margin: 20px;
+
+    color: black;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    padding: 0 10px 0px 10px;
+    border-radius: 12px;
+    -webkit-text-stroke: 1px white;
+}
+
+
+.cloudy{
+    background: url('../../../../resources/cloudy.gif');
+    background-size: cover;
+}
+.clear{
+    background: url('../../../../resources/clear.gif');
+    background-size: cover;
+}
+.rain{
+    background: url('../../../../resources/rain.gif');
+    background-size: cover;
+}
+.snow{
+    background: url('../../../../resources/snow.gif');
+    background-size: cover;
+}
+
+.date{
+
+    font-size: 24px!important;
+}
