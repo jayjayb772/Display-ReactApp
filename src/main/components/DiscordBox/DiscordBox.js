@@ -24,7 +24,7 @@ useEffect(()=>{
             console.log('message', e.data);
             console.log('received message')
             messages.push(JSON.parse(data))
-            if (messages.length > 4) {
+            if (messages.length > 5) {
                 console.log('messages greater than 4')
                 messages.shift()
             }
@@ -40,7 +40,7 @@ useEffect(()=>{
 }, []);
 if(isLoaded){
     return (
-        <div className="bg">
+        <div className="my-bg" >
             {messages.map((m)=>(
                 <Message message={m.message} from={m.from}/>
                 )
@@ -48,7 +48,7 @@ if(isLoaded){
         </div>
     )}else{
     return (
-        <div>
+        <div className="my-bg">
             {messages.map((m)=>(
                     <Message message={m.message} from={m.from}/>
                 )
