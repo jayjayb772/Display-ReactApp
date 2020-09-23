@@ -14,7 +14,9 @@ function DiscordBox(props){
         sock =  new SockJS(url);
     }
 useEffect(()=>{
+    let recInterval = null;
     sock.onopen = async function() {
+        clearInterval(recInterval)
         console.log('open');
         console.log("OPENED CONNECTION")
         sock.send('test');
@@ -33,7 +35,6 @@ useEffect(()=>{
                     messages.shift()
                 }
                 setMessages(messages)
-                console.log(messages)
                 setIsLoaded(false)
                 setIsLoaded(true)
             }catch(err){
@@ -42,7 +43,7 @@ useEffect(()=>{
         }
     };
     sock.onclose = function() {
-        let recInterval = null;
+
         recInterval = setInterval(function () {
             new_conn();
         }, 2000);
@@ -58,7 +59,7 @@ if(isLoaded){
     return (
         <div className="my-bg" >
             {messages.map((m)=>(
-                <Message message={m.message} from={m.from}/>
+                <Message message={m.message} from={m.from} ts={m.ts}/>
                 )
             )}
         </div>
@@ -66,7 +67,7 @@ if(isLoaded){
     return (
         <div className="my-bg">
             {messages.map((m)=>(
-                    <Message message={m.message} from={m.from}/>
+                    <Message message={m.message} from={m.from} ts={m.ts}/>
                 )
             )}
         </div>
