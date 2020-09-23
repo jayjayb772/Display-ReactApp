@@ -16,7 +16,7 @@ useEffect(()=>{
     let new_conn = function(){
         console.log("opening new connection")
         sock =  new SockJS(url, null, {timeout:5000000});
-        console.log("hello new conn")
+        console.log("hello-new conn")
 
     }
     sock.onopen = function() {
@@ -25,14 +25,14 @@ useEffect(()=>{
         sock.send('test');
         isConnected = true;
         setIsConnected(true);
-        console.log("hello open")
+        console.log("hello-open")
     };
 
     sock.onmessage = function(e) {
         if(e.data === "test"){
-            console.log("hello message test")
+            console.log("hello-message test")
         }else {
-            console.log("hello not test")
+            console.log("hello-not test")
             let data = e.data
             console.log('received message')
             try {
@@ -49,37 +49,33 @@ useEffect(()=>{
                 console.log(err)
             }
         }
-    };
+    }
+
     sock.onclose = function() {
         isConnected = false;
         setIsConnected(false)
-        console.log("hello on close")
+        console.log("hello-on close")
     };
     const interval = setInterval(() => {
         if(!isConnected){
-            console.log(isConnected)
-            new_conn()
-            console.log("hello interval")
+            console.log("hello-interval- not connected")
         }
         //sock.send('alive')
         console.log('Stay alive')
         console.log('Stay alive message!!');
-        sock.send("test")
-    }, 10000);
+        try {
+            console.log(isConnected)
+            console.log("trying to send")
+            sock.send("test")
+
+        }catch(err){
+            console.log("error sending")
+            new_conn()
+        }
+        }, 15000);
     return () => clearInterval(interval);
 }, []);
 
-
-
-if(isLoaded){
-    return (
-        <div className="my-bg" >
-            {messages.map((m)=>(
-                <Message key={m.ts} message={m.message} from={m.from} ts={m.ts}/>
-                )
-            )}
-        </div>
-    )}else{
     return (
         <div className="my-bg">
             {messages.map((m)=>(
@@ -88,7 +84,6 @@ if(isLoaded){
             )}
         </div>
     )
-}
 }
 
 export default DiscordBox
