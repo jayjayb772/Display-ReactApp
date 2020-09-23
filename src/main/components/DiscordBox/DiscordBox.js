@@ -13,27 +13,38 @@ function DiscordBox(props){
 
 
 useEffect(()=>{
-
     let new_conn = function(){
         console.log("opening new connection")
         sock =  new SockJS(url);
-        console.log("hello 6")
+        console.log("hello new conn")
 
     }
+    const interval = setInterval(() => {
+        if(!isConnected){
+            console.log(isConnected)
+            new_conn()
+            console.log("hello interval")
+        }
+        //sock.send('alive')
+        console.log('Stay alive')
+    }, 10000);
+    return () => clearInterval(interval);
+}, []);
+
     sock.onopen = function() {
         console.log('open');
         console.log("OPENED CONNECTION")
         sock.send('test');
         isConnected = true;
         setIsConnected(true);
-        console.log("hello 5")
+        console.log("hello open")
     };
 
     sock.onmessage = function(e) {
         if(e.data === "test"){
-            console.log("hello 4")
+            console.log("hello message test")
         }else {
-            console.log("hello 3")
+            console.log("hello not test")
             let data = e.data
             console.log('received message')
             try {
@@ -53,21 +64,10 @@ useEffect(()=>{
     sock.onclose = function() {
         isConnected = false;
         setIsConnected(false)
-        console.log("hello 2")
+        console.log("hello on close")
     };
 
 
-    const interval = setInterval(() => {
-        if(!isConnected){
-            console.log(isConnected)
-            new_conn()
-            console.log("hello 1")
-        }
-        //sock.send('alive')
-        console.log('Stay alive')
-    }, 10000);
-    return () => clearInterval(interval);
-}, []);
 if(isLoaded){
     return (
         <div className="my-bg" >
