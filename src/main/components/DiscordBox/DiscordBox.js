@@ -18,43 +18,43 @@ useEffect(()=>{
         sock =  new SockJS(url);
         console.log("hello 6")
 
-        sock.onopen = function() {
-            console.log('open');
-            console.log("OPENED CONNECTION")
-            sock.send('test');
-            isConnected = true;
-            setIsConnected(true);
-            console.log("hello 5")
-        };
-
-        sock.onmessage = function(e) {
-            if(e.data === "test"){
-                console.log("hello 4")
-            }else {
-                console.log("hello 3")
-                let data = e.data
-                console.log('received message')
-                try {
-                    messages.push(JSON.parse(data))
-                    if (messages.length > 5) {
-                        console.log('messages greater than 4')
-                        messages.shift()
-                    }
-                    setMessages(messages)
-                    setIsLoaded(false)
-                    setIsLoaded(true)
-                }catch(err){
-                    console.log('Stay alive message!!');
-                }
-            }
-        };
-        sock.onclose = function() {
-            isConnected = false;
-            setIsConnected(false)
-            console.log("hello 2")
-        };
     }
 
+    sock.onopen = function() {
+        console.log('open');
+        console.log("OPENED CONNECTION")
+        sock.send('test');
+        isConnected = true;
+        setIsConnected(true);
+        console.log("hello 5")
+    };
+
+    sock.onmessage = function(e) {
+        if(e.data === "test"){
+            console.log("hello 4")
+        }else {
+            console.log("hello 3")
+            let data = e.data
+            console.log('received message')
+            try {
+                messages.push(JSON.parse(data))
+                if (messages.length > 5) {
+                    console.log('messages greater than 4')
+                    messages.shift()
+                }
+                setMessages(messages)
+                setIsLoaded(false)
+                setIsLoaded(true)
+            }catch(err){
+                console.log('Stay alive message!!');
+            }
+        }
+    };
+    sock.onclose = function() {
+        isConnected = false;
+        setIsConnected(false)
+        console.log("hello 2")
+    };
 
 
     const interval = setInterval(() => {
