@@ -1,5 +1,5 @@
 ## What is this?
-This is the react web app that is running on the verticlly mounted tv in my living room that displays train times, weather forecasts, and messages from my roommates and I's discord server.
+This is the react web app that is running on the vertically mounted tv in my living room that displays train times, weather forecasts, and messages from my roommates and I's discord server.
 
 ## Where is it being hosted???
 It's being hosted on Heroku for now, https://dashboard-display-webapp.herokuapp.com/ , but it will soon be moved over to the digital ocean server I have running the back end APIs
