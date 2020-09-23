@@ -15,24 +15,10 @@ function DiscordBox(props){
 useEffect(()=>{
     let new_conn = function(){
         console.log("opening new connection")
-        sock =  new SockJS(url);
+        sock =  new SockJS(url, null, {timeout:5000000});
         console.log("hello new conn")
 
     }
-    const interval = setInterval(() => {
-        if(!isConnected){
-            console.log(isConnected)
-            new_conn()
-            console.log("hello interval")
-        }
-        //sock.send('alive')
-        console.log('Stay alive')
-        console.log('Stay alive message!!');
-        sock.send("test")
-    }, 10000);
-    return () => clearInterval(interval);
-}, []);
-
     sock.onopen = function() {
         console.log('open');
         console.log("OPENED CONNECTION")
@@ -69,6 +55,20 @@ useEffect(()=>{
         setIsConnected(false)
         console.log("hello on close")
     };
+    const interval = setInterval(() => {
+        if(!isConnected){
+            console.log(isConnected)
+            new_conn()
+            console.log("hello interval")
+        }
+        //sock.send('alive')
+        console.log('Stay alive')
+        console.log('Stay alive message!!');
+        sock.send("test")
+    }, 10000);
+    return () => clearInterval(interval);
+}, []);
+
 
 
 if(isLoaded){
