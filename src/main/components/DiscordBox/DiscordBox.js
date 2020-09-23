@@ -20,7 +20,6 @@ useEffect(()=>{
         console.log("hello 6")
 
     }
-
     sock.onopen = function() {
         console.log('open');
         console.log("OPENED CONNECTION")
