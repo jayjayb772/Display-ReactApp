@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Forecast from "./forecast/Forecast";
+import {debugLog} from "../../util/debugLog";
 
 
 function WeatherBox(props) {
@@ -28,6 +29,7 @@ function WeatherBox(props) {
 
     }, [])
     if (error !== "") {
+        debugLog("Error in weather box", true)
         return <div className="Error">{error}</div>
     } else {
         if (!isLoaded) {

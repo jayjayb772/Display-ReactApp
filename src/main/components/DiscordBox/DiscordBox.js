@@ -54,7 +54,7 @@ useEffect(()=>{
         debugLog("sock.onClose", false)
     };
     const interval = setInterval(() => {
-        debugLog("about to try stay alive", false)
+        debugLog("about to try stay alive", true)
         try {
             debugLog("trying to send stay alive", false)
             sock.send("stay alive")
@@ -79,6 +79,7 @@ if(isLoaded) {
         </div>
     )
 }else{
+    debugLog("Cant connect to websocket", true)
     return (<div className="my-bg">
         Cannot Connect to Discord Websocket
     </div> )
