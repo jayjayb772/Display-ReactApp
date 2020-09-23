@@ -1,3 +1,4 @@
+
 ## What is this?
 This is the react web app that is running on the vertically mounted tv in my living room that displays train times, weather forecasts, and messages from my roommates and I's discord server.
 
@@ -20,7 +21,6 @@ Because I never found a display board with enough customizability for me. Also I
 [DiscordBot](https://github.com/jayjayb772/1925-discord-bot)
 
 ---
-
 
 soon to implement for messages https://www.npmjs.com/package/react-speech
 

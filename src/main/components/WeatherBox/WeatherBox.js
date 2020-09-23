@@ -9,25 +9,21 @@ function WeatherBox(props) {
     useEffect(() => {
         function doStuff() {
             let url = `${process.env.REACT_APP_ORCHURL}/weather/forecast-week?city=${props.city}&state=${props.state}`
-            console.log(url);
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
-                    console.log("here")
-                    console.log(data)
                     setForecasts([]);
 
                     setIsLoaded(true)
-                    setForecasts(data);
+                    forecasts.push(data)
+                    setForecasts(() => data);
 
                 })
         };
         doStuff();
         const interval = setInterval(() => {
             setError("")
-
             doStuff();
-            console.log('This will run every minute!');
         }, 60000*60);
         return () => clearInterval(interval);
 
@@ -40,7 +36,6 @@ function WeatherBox(props) {
         } else {
             return (
                 <div>
-                    {console.log("IN DIV")}
                     {forecasts.map(t => (
                         <Forecast key={t.forecast_date} forecast={t} dir={props.dir}/>
                     ))}

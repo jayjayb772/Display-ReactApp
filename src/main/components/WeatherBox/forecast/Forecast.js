@@ -12,20 +12,13 @@ import Moment from "react-moment";
 function Forecast(props){
     let direction
     direction= fadeIn
-    console.log("HELLO")
-    console.log(props)
     let [Bounce, setBounce] = useState(styled.div`animation: 4s ${keyframes`${direction}`} ease-in`)
     let [first, setFirst] = useState(true)
     function update() {
-        console.log(first)
         if(first === false){
             direction= fadeOut
-            console.log("im here");
-
             const animation = props =>css`4s ${keyframes`${direction}`} ease-in`
             setBounce(styled.div`animation: ${animation}`)
-
-            //setBounce(styled.div`animation: 4s ${keyframes`${direction}`} ease-in`)
         }
 
     };
@@ -33,7 +26,6 @@ function Forecast(props){
         const interval = setInterval(() => {
             first = false
             setFirst(false)
-            console.log("setting here")
             update()
         }, (60000*60)-4);
         update()
