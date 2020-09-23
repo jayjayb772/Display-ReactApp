@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Train from "./train/Train";
-import {debugLog} from "../../util/debugLog.js";
+
 
 
 function CtaBox(props) {
@@ -51,7 +51,6 @@ function CtaBox(props) {
 
     }, [])
     if (error !== "") {
-        debugLog("Error in CTA Box", true)
         return <div className="Error">{error}</div>
     } else {
         if (!isLoaded) {
