@@ -15,7 +15,7 @@ function DiscordBox(props){
 useEffect(()=>{
     let new_conn = function(){
         debugLog("opening new connection", false)
-        sock =  new SockJS(url, null, {timeout:5000000});
+        sock =  new SockJS(url, ['eventsource', 'htmlfile', 'jsonp-polling', 'websocket', 'websocket-raw', 'xhr-polling', 'xhr-streaming'], {heartbeat_delay:5000});
         debugLog("created new conn", false)
 
     }
