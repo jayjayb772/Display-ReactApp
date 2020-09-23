@@ -15,7 +15,8 @@ function WeatherBox(props) {
                     setForecasts([]);
 
                     setIsLoaded(true)
-                    setForecasts(data);
+                    forecasts.push(data)
+                    setForecasts(() => data);
 
                 })
         };
