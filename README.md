@@ -22,9 +22,35 @@ Because I never found a display board with enough customizability for me. Also I
 
 ---
 
-soon to implement for messages https://www.npmjs.com/package/react-speech
+# Functional Components
+- _CTABox_
+    - Desc: Can do montrose as default, or other station when given props
+    - _Train_
+        - Desc: Mapped from fetch call to orchestrator API
+- _WeatherBox_
+    - Desc: Only gives 5 day forecast as of now
+    - _Forecast_
+        - Desc: Mapped from fetch call to orchestrator API
+- _DiscordBox_
+    - Desc: Connected to Orchestrator websocket, recieves messages from discord
+    - _Message_
+        - Desc: Mapped from onMessage data from websocket
 
-
+# Upcoming Components
+- _CurrentWeatherBox_
+    - Desc: Will get current weather and forecast for day. have gif/pic based on forecast/temp
+    - Might brake into subcomponents for _Temps_, _WindDir_, _ForecastDesc_\
+- _FamilyMessageBox_
+    - Desc: Will be connected to websocket but make data contain a messageType field for Discord, or family, or other scalability in the future
+    - Will probably reuse _Message_ from _DiscordBox_
+- _ResidentsMessageNotifs_
+    - Desc: Push Notification system for my roomates and I to send messages to be said using text to speech on the board
+    - Will use websockets, need to work on overlays
+- _ToDoBox_
+    - Desc: A chore chart for my roomates and I! This will be a large feature that involves discord commands, orchestrator data retention, and possibly the biggest reason to make a mobile/client side page for controlling the board.
+    - _ToDoItem_
+        - Desc: Items will be stored in a DB, maybe firebase for real time sync, things will be auto populated based on when things need to be done. We'll then be able to cross things off using discord, maybe texting, and maybe even through a mobile page for broswers
+         
 #react web app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
