@@ -8,7 +8,12 @@ function DiscordBox(props){
     const [isLoaded, setIsLoaded] = useState(false);
     let url = `${process.env.REACT_APP_SOCKJS}`;
     console.log(url)
-    const sock = new SockJS(url);
+    let sock = new SockJS(url);
+
+    let new_conn = function(){
+        console.log("opening new connection")
+        sock =  new SockJS(url);
+    }
 useEffect(()=>{
     sock.onopen = async function() {
         console.log('open');
@@ -38,12 +43,17 @@ useEffect(()=>{
             }
         }
     };
-    sock.onclose = async function() {
+    sock.onclose = function() {
+        let recInterval = null;
+        recInterval = setInterval(function () {
+            new_conn();
+        }, 2000);
     };
 
     const interval = setInterval(() => {
-        sock.send('alive')
-    }, 30000);
+        //sock.send('alive')
+        //console.log('Stay alive')
+    }, 10000);
     return () => clearInterval(interval);
 }, []);
 if(isLoaded){
