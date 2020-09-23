@@ -7,7 +7,9 @@ It's being hosted on Heroku for now, https://dashboard-display-webapp.herokuapp.
 ## Why'd you do this?
 Because I never found a display board with enough customizability for me. Also I wanted to make a microservice based API on my own and I never really had the chance to learn react
 
-## Links to other code bases!
+## Links to all project code bases!
+
+[React App](https://github.com/jayjayb772/Display-ReactApp)
 
 [Orchestrator](https://github.com/jayjayb772/Display-orchestrator)
 
