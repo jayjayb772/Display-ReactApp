@@ -73,7 +73,7 @@ if(isLoaded){
     return (
         <div className="my-bg" >
             {messages.map((m)=>(
-                <Message message={m.message} from={m.from} ts={m.ts}/>
+                <Message key={m.ts} message={m.message} from={m.from} ts={m.ts}/>
                 )
             )}
         </div>
@@ -81,7 +81,7 @@ if(isLoaded){
     return (
         <div className="my-bg">
             {messages.map((m)=>(
-                    <Message message={m.message} from={m.from} ts={m.ts}/>
+                    <Message key={m.ts} message={m.message} from={m.from} ts={m.ts}/>
                 )
             )}
         </div>
