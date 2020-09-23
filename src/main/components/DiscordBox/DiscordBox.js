@@ -6,7 +6,7 @@ import './DiscordBox.css';
 function DiscordBox(props){
     let [messages,setMessages] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
-    let url = `http://localhost:8080/websocket`;
+    let url = `${process.env.REACT_APP_SOCKJS}`;
     let sock = new SockJS(url);
     let [isConnected, setIsConnected] = useState(false);
 
