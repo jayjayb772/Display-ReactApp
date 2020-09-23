@@ -1,3 +1,4 @@
+
 function debugLog(log, error){
     if(process.env.REACT_APP_DEBUG === true){
         if(!error) {
@@ -6,15 +7,12 @@ function debugLog(log, error){
             console.error(`DEBUG_ERROR: ${log}`)
         }
     }else if(error){
-        sendError(log).then(()=>{
-            return;
-        })
+        sendError(log)
     }
 }
 
+function sendError(log){
 
-async function sendError(log){
-    try {
     const err = {
         "ts":Date.now(),
         "err":log
@@ -26,6 +24,7 @@ async function sendError(log){
         'Access-Control-Allow-Origin': '*'},
         body: JSON.stringify(err)
     };
+    try {
     console.log('Sending Error')
         fetch(`${process.env.REACT_APP_ORCHURL}/discord/display-error`, requestOptions)
             .then(data => {
@@ -36,7 +35,8 @@ async function sendError(log){
     }catch(err){
         console.error("ERROR THROWING ERROR TO DISCORD")
         console.error(err)
-        setTimeout( function ( ) { alert( "ERROR THROWING ERROR" ); }, 10000 );
     }
 }
+
+
 module.exports = {debugLog}

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Train from "./train/Train";
-import {debugLog} from "../../util/debugLog";
+import {debugLog} from "../../util/debugLog.js";
 
 
 function CtaBox(props) {

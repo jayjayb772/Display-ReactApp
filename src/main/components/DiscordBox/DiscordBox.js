@@ -2,7 +2,7 @@ import SockJS from 'sockjs-client'
 import React, {useEffect, useState} from "react";
 import Message from "./message/Message.js";
 import './DiscordBox.css';
-import {debugLog} from "../../util/debugLog";
+import {debugLog} from "../../util/debugLog.js";
 
 function DiscordBox(props){
     let [messages,setMessages] = useState([])

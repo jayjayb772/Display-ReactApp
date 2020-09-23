@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Forecast from "./forecast/Forecast";
-import {debugLog} from "../../util/debugLog";
+import {debugLog} from "../../util/debugLog.js";
 
 
 function WeatherBox(props) {
