@@ -14,7 +14,6 @@ function CtaBox(props) {
             }else{
                 url = `${process.env.REACT_APP_ORCHURL}/cta/train-times`
             }
-                console.log(url);
             fetch(url)
                 .then(res => res.json())
                 .then(data => {

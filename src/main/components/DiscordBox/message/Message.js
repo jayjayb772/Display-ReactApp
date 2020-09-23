@@ -3,7 +3,6 @@ import './Message.css';
 import Moment from "react-moment";
 
 function Message(props){
-    console.log("HELLO from message")
     return (
             <div className="message">
                 "{props.message}"

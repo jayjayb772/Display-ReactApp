@@ -7,7 +7,6 @@ function DiscordBox(props){
     let [messages,setMessages] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
     let url = `${process.env.REACT_APP_SOCKJS}`;
-    console.log(url)
     let sock = new SockJS(url);
 
     let new_conn = function(){
@@ -26,7 +25,6 @@ useEffect(()=>{
 
         }else {
             let data = e.data
-            console.log('message', e.data);
             console.log('received message')
             try {
                 messages.push(JSON.parse(data))

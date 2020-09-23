@@ -12,11 +12,8 @@ function Train(props){
     let [Bounce, setBounce] = useState(styled.div`animation: 2s ${keyframes`${direction}`}`)
     let [first, setFirst] = useState(true)
     function update() {
-        console.log(first)
         if(first === false){
             direction= fadeOut
-            console.log("im here");
-
             const animation = props =>css`4s ${keyframes`${direction} ease-in`}`
             setBounce(styled.div`animation: ${animation}`)
 
@@ -27,8 +24,6 @@ function Train(props){
     useEffect(() => {
         const interval = setInterval(() => {
            first = false
-
-            console.log("setting here")
             update()
         }, 56500);
         update()
