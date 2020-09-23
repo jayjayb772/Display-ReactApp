@@ -27,6 +27,8 @@ useEffect(()=>{
         }
         //sock.send('alive')
         console.log('Stay alive')
+        console.log('Stay alive message!!');
+        sock.send("test")
     }, 10000);
     return () => clearInterval(interval);
 }, []);
@@ -57,7 +59,8 @@ useEffect(()=>{
                 setIsLoaded(false)
                 setIsLoaded(true)
             }catch(err){
-                console.log('Stay alive message!!');
+                console.log("Issue with message")
+                console.log(err)
             }
         }
     };
