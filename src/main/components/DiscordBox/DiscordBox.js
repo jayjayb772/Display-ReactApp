@@ -65,7 +65,7 @@ function DiscordBox(props) {
                     sock.send("stay alive")
                     console.log(`setting loaded to true ln79, it is ${isLoaded}`)
 
-        }, 5000);
+        }, 15000);
         return () => clearInterval(interval);
     }, []);
 
