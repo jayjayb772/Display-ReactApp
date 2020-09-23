@@ -23,15 +23,19 @@ useEffect(()=>{
             let data = e.data
             console.log('message', e.data);
             console.log('received message')
-            messages.push(JSON.parse(data))
-            if (messages.length > 5) {
-                console.log('messages greater than 4')
-                messages.shift()
+            try {
+                messages.push(JSON.parse(data))
+                if (messages.length > 5) {
+                    console.log('messages greater than 4')
+                    messages.shift()
+                }
+                setMessages(messages)
+                console.log(messages)
+                setIsLoaded(false)
+                setIsLoaded(true)
+            }catch(err){
+                console.log('Stay alive message!!');
             }
-            setMessages(messages)
-            console.log(messages)
-            setIsLoaded(false)
-            setIsLoaded(true)
         }
     };
     sock.onclose = async function() {
