@@ -7,6 +7,7 @@ function DiscordBox(props){
     let [messages,setMessages] = useState([])
     const [isLoaded, setIsLoaded] = useState(false);
     let url = `${process.env.REACT_APP_SOCKJS}`;
+    //DUMB BITCH AT LEAST YOU DIDNT PUSH THE ACTUAL URL
     let sock = new SockJS(url);
     let [isConnected, setIsConnected] = useState(false);
 
