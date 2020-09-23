@@ -7,6 +7,8 @@ It's being hosted on Heroku for now, https://dashboard-display-webapp.herokuapp.
 ## Why'd you do this?
 Because I never found a display board with enough customizability for me. Also I wanted to make a microservice based API on my own and I never really had the chance to learn react
 
+## Links to other code bases!
+
 [Orchestrator](https://github.com/jayjayb772/Display-orchestrator)
 
 [CTAPI](https://github.com/jayjayb772/Display-CTAPI)
@@ -15,6 +17,7 @@ Because I never found a display board with enough customizability for me. Also I
 
 [DiscordBot](https://github.com/jayjayb772/1925-discord-bot)
 
+---
 
 
 soon to implement for messages https://www.npmjs.com/package/react-speech
