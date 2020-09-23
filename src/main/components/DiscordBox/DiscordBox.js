@@ -16,23 +16,25 @@ useEffect(()=>{
     let new_conn = function(){
         console.log("opening new connection")
         sock =  new SockJS(url, null, {timeout:5000000});
-        console.log("hello-new conn")
+        console.log("created new conn")
 
     }
     sock.onopen = function() {
-        console.log('open');
-        console.log("OPENED CONNECTION")
+        console.log('sock.onOpen');
+        console.log("Trying to send test");
         sock.send('test');
         isConnected = true;
         setIsConnected(true);
-        console.log("hello-open")
+        console.log("Connected")
     };
 
     sock.onmessage = function(e) {
         if(e.data === "test"){
-            console.log("hello-message test")
-        }else {
-            console.log("hello-not test")
+            console.log("sock.onMessage: test");
+        }else if(e.data ==="stay alive"){
+            console.log("sock.onMessage: stay alive");
+        }else{
+            console.log("sock.onMessage: Not test or stay alive");
             let data = e.data
             console.log('received message')
             try {
@@ -54,22 +56,21 @@ useEffect(()=>{
     sock.onclose = function() {
         isConnected = false;
         setIsConnected(false)
-        console.log("hello-on close")
+        console.log("sock.onClose")
     };
     const interval = setInterval(() => {
         if(!isConnected){
-            console.log("hello-interval- not connected")
+            console.log("interval- !isConnected")
         }
-        //sock.send('alive')
-        console.log('Stay alive')
-        console.log('Stay alive message!!');
+        console.log("about to try stay alive")
         try {
             console.log(isConnected)
-            console.log("trying to send")
-            sock.send("test")
+            console.log("trying to send stay alive")
+            sock.send("stay alive")
 
         }catch(err){
-            console.log("error sending")
+            console.log("error sending stay alive")
+            console.log("attempting new conn")
             new_conn()
         }
         }, 15000);
