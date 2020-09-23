@@ -35,8 +35,12 @@ useEffect(()=>{
         }
     };
     sock.onclose = async function() {
-        console.log('close');
     };
+
+    const interval = setInterval(() => {
+        sock.send('alive')
+    }, 30000);
+    return () => clearInterval(interval);
 }, []);
 if(isLoaded){
     return (
