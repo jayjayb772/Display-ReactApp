@@ -2,6 +2,7 @@ import SockJS from 'sockjs-client'
 import React, {useEffect, useState} from "react";
 import Message from "./message/Message.js";
 import './DiscordBox.css';
+import {debugLog} from "../../util/debugLog";
 
 function DiscordBox(props){
     let [messages,setMessages] = useState([])
@@ -9,82 +10,79 @@ function DiscordBox(props){
     let url = `${process.env.REACT_APP_SOCKJS}`;
     //DUMB BITCH AT LEAST YOU DIDNT PUSH THE ACTUAL URL
     let sock = new SockJS(url);
-    let [isConnected, setIsConnected] = useState(false);
 
 
 useEffect(()=>{
     let new_conn = function(){
-        console.log("opening new connection")
+        debugLog("opening new connection", false)
         sock =  new SockJS(url, null, {timeout:5000000});
-        console.log("created new conn")
+        debugLog("created new conn", false)
 
     }
     sock.onopen = function() {
-        console.log('sock.onOpen');
-        console.log("Trying to send test");
+        debugLog('sock.onOpen', false);
+        debugLog("Trying to send test", false);
         sock.send('test');
-        isConnected = true;
-        setIsConnected(true);
-        console.log("Connected")
+        debugLog("Connected", false)
     };
 
     sock.onmessage = function(e) {
         if(e.data === "test"){
-            console.log("sock.onMessage: test");
+            debugLog("sock.onMessage: test", false);
         }else if(e.data ==="stay alive"){
-            console.log("sock.onMessage: stay alive");
+            debugLog("sock.onMessage: stay alive", false);
         }else{
-            console.log("sock.onMessage: Not test or stay alive");
+            debugLog("sock.onMessage: Not test or stay alive", false);
             let data = e.data
-            console.log('received message')
+            debugLog('received message', false)
             try {
                 messages.push(JSON.parse(data))
                 if (messages.length > 5) {
-                    console.log('messages greater than 4')
+                    debugLog('messages greater than 4', false)
                     messages.shift()
                 }
                 setMessages(messages)
-                setIsLoaded(false)
                 setIsLoaded(true)
             }catch(err){
-                console.log("Issue with message")
-                console.log(err)
+                debugLog("Issue with message", false)
+                debugLog(err, true)
             }
         }
     }
 
     sock.onclose = function() {
-        isConnected = false;
-        setIsConnected(false)
-        console.log("sock.onClose")
+        debugLog("sock.onClose", false)
     };
     const interval = setInterval(() => {
-        if(!isConnected){
-            console.log("interval- !isConnected")
-        }
-        console.log("about to try stay alive")
+        debugLog("about to try stay alive", false)
         try {
-            console.log(isConnected)
-            console.log("trying to send stay alive")
+            debugLog("trying to send stay alive", false)
             sock.send("stay alive")
+            setIsLoaded(true)
 
         }catch(err){
-            console.log("error sending stay alive")
-            console.log("attempting new conn")
+            debugLog("error sending stay alive", true)
+            debugLog("attempting new conn",false)
+            setIsLoaded(false)
             new_conn()
         }
         }, 15000);
     return () => clearInterval(interval);
 }, []);
-
+if(isLoaded) {
     return (
         <div className="my-bg">
-            {messages.map((m)=>(
+            {messages.map((m) => (
                     <Message key={m.ts} message={m.message} from={m.from} ts={m.ts}/>
                 )
             )}
         </div>
     )
+}else{
+    return (<div className="my-bg">
+        Cannot Connect to Discord Websocket
+    </div> )
+}
 }
 
 export default DiscordBox

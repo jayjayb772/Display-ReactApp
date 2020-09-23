@@ -13,7 +13,6 @@ function WeatherBox(props) {
                 .then(res => res.json())
                 .then(data => {
                     setForecasts([]);
-
                     setIsLoaded(true)
                     forecasts.push(data)
                     setForecasts(() => data);
