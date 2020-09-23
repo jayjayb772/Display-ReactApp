@@ -11,8 +11,8 @@ function Message(props){
                     <div className="time">
                     <br/>
                     <Moment date={props.ts} format="h:mm:ssa" tz="America/Chicago" />
-                    <Moment  date={props.ts} format="MMMM Do YYYY" tz="America/Chicago"/>
-                    </div>
+                    <Moment  date={props.ts} format="MMMM Do YYYY" tz="America/Chicago"/>    
+                  </div>
                 </div>
             </div>
     )

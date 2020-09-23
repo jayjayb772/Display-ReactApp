@@ -1,3 +1,27 @@
+
+## What is this?
+This is the react web app that is running on the vertically mounted tv in my living room that displays train times, weather forecasts, and messages from my roommates and I's discord server.
+
+## Where is it being hosted???
+It's being hosted on Heroku for now, https://dashboard-display-webapp.herokuapp.com/ , but it will soon be moved over to the digital ocean server I have running the back end APIs
+
+## Why'd you do this?
+Because I never found a display board with enough customizability for me. Also I wanted to make a microservice based API on my own and I never really had the chance to learn react
+
+## Links to all project code bases!
+
+[React App](https://github.com/jayjayb772/Display-ReactApp)
+
+[Orchestrator](https://github.com/jayjayb772/Display-orchestrator)
+
+[CTAPI](https://github.com/jayjayb772/Display-CTAPI)
+
+[WeatherAPI](https://github.com/jayjayb772/Display-Weather)
+
+[DiscordBot](https://github.com/jayjayb772/1925-discord-bot)
+
+---
+
 soon to implement for messages https://www.npmjs.com/package/react-speech
 
 
