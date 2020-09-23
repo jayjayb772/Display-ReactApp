@@ -54,7 +54,7 @@ useEffect(()=>{
         debugLog("sock.onClose", false)
     };
     const interval = setInterval(() => {
-        debugLog("about to try stay alive", true)
+        debugLog("about to try stay alive", false)
         try {
             debugLog("trying to send stay alive", false)
             sock.send("stay alive")

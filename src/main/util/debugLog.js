@@ -6,12 +6,15 @@ function debugLog(log, error){
             console.error(`DEBUG_ERROR: ${log}`)
         }
     }else if(error){
-        sendError(log)
+        sendError(log).then(()=>{
+            return;
+        })
     }
 }
 
 
-function sendError(log){
+async function sendError(log){
+    try {
     const err = {
         "ts":Date.now(),
         "err":log
@@ -23,11 +26,17 @@ function sendError(log){
         'Access-Control-Allow-Origin': '*'},
         body: JSON.stringify(err)
     };
-
-    fetch(`${process.env.REACT_APP_ORCHURL}/discord/display-error`, requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            return data;
-        });
+    console.log('Sending Error')
+        fetch(`${process.env.REACT_APP_ORCHURL}/discord/display-error`, requestOptions)
+            .then(data => {
+                console.log(data)
+                return;
+            });
+    console.log("fetched")
+    }catch(err){
+        console.error("ERROR THROWING ERROR TO DISCORD")
+        console.error(err)
+        setTimeout( function ( ) { alert( "ERROR THROWING ERROR" ); }, 10000 );
+    }
 }
 module.exports = {debugLog}
