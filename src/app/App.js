@@ -14,30 +14,50 @@ function App() {
     return (
         <div className="App bg" >
             <div className="MainBox">
-                <Row middle="xs" center="xs" around="xs" className="TopBox">
+                <Row middle="xs" center="xs" around="xs" className="TopBox-head">
                     <Col xs={num} className="quadrant-left" >
                         <div className="CTA">
                             Montrose
-                            <CtaBox stop="Montrose" color="Brown"/>
                         </div>
                     </Col>
                     <Col xs={num} className="quadrant-right">
                         <div className="CTA">
                             Fullerton
+                        </div>
+                    </Col>
+                </Row>
+                <Row middle="xs" center="xs" around="xs" className="TopBox">
+                    <Col xs={num} className="quadrant-left" >
+                        <div className="CTA">
+                            <CtaBox stop="Montrose" color="Brown"/>
+                        </div>
+                    </Col>
+                    <Col xs={num} className="quadrant-right">
+                        <div className="CTA">
                             <CtaBox stop="Fullerton" color="Red"/>
+                        </div>
+                    </Col>
+                </Row>
+                <Row middle="xs" center="xs" around="xs" className="BottomBox-head">
+                    <Col xs={num} className="quadrant-left">
+                        <div className="Weather">
+                            Chicago Forecast
+                        </div>
+                    </Col>
+                    <Col xs={num} className="quadrant-right">
+                        <div className="Discord">
+                            Discord Messages
                         </div>
                     </Col>
                 </Row>
                 <Row middle="xs" center="xs" around="xs" className="BottomBox">
                     <Col xs={num} className="quadrant-left">
                         <div className="Weather">
-                            Chicago Forecast
                             <WeatherBox city="Chicago" state="Illinois"/>
                         </div>
                     </Col>
                     <Col xs={num} className="quadrant-right">
                         <div className="Discord">
-                            Discord Messages
                             <DiscordBox/>
                         </div>
                     </Col>

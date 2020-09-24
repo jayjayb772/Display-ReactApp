@@ -73,7 +73,7 @@ function DiscordBox(props) {
     return (
         <div className="my-bg">
             {messages.map(m => (
-                    <Message key={m.ts} message={m.message} from={m.from} ts={m.ts}/>
+                    <Message key={m.ts} message={m.message} from={m.from} ts={m.ts} additionalData={m.data}/>
                 )
             )}
         </div>
