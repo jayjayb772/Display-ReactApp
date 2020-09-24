@@ -5,13 +5,13 @@ import Moment from "react-moment";
 function Message(props){
     console.log("trying to make message")
     console.log(`${props.message}, ${props.from}, ${props.ts}`)
-    let img = "no-image";
-    let src;
-    if(props.data.imageURL !== null){
-        img = "image";
-        src = props.data.imageUrl
-
-    }
+    // let img = "no-image";
+    // let src;
+    // if(props.data.imageURL !== null){
+    //     img = "image";
+    //     src = props.data.imageUrl
+    //
+    // }
 
     return (
             <div className="message">
