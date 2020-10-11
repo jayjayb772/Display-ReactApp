@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import Moment from 'react-moment';
 import 'moment-timezone';
 import "./CurTempBlock.css"
-import Forecast from "../components/WeatherBox/forecast/Forecast";
+import CurTempComponent from "./CurTempComponent/CurTempComponent";
 
 function CurTempBlock(props){
     let [curForecast, setCurForecast] = useState(()=>{

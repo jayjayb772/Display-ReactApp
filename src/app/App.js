@@ -5,8 +5,8 @@ import CtaBox from "../main/components/CtaBox/CtaBox";
 import { bounceInRight } from 'react-animations'
 import Background from '../resources/bg-img.png';
 import WeatherBox from "../main/components/WeatherBox/WeatherBox";
-import CurTempBlock from "../main/components/TimeBlock/TimeBlock";
 import DiscordBox from "../main/components/DiscordBox/DiscordBox";
+import TimeBlock from "../main/components/TimeBlock/TimeBlock";
 let num = 5
 
 function App() {

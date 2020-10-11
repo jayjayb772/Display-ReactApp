@@ -62,7 +62,7 @@ function DiscordBox(props) {
         const interval = setInterval(() => {
             console.log(`sock ready state ${sock.readyState}`)
                     //debugLog("trying to send stay alive", false)
-                    sock.send("stay alive")
+                    sock.send("stay alive-display-board")
                     console.log(`setting loaded to true ln79, it is ${isLoaded}`)
 
         }, 15000);
