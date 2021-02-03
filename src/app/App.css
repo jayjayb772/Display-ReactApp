@@ -104,6 +104,16 @@
   height: available;
 
 }
+.Stocks{
+  color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 72px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 700;
+  height: available;
+
+}
 
 .Weather{
   color: white;

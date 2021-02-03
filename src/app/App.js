@@ -2,11 +2,10 @@ import React from 'react';
 import './App.css';
 import {Col, Row} from "react-flexbox-grid";
 import CtaBox from "../main/components/CtaBox/CtaBox";
-import { bounceInRight } from 'react-animations'
-import Background from '../resources/bg-img.png';
 import WeatherBox from "../main/components/WeatherBox/WeatherBox";
 import DiscordBox from "../main/components/DiscordBox/DiscordBox";
 import TimeBlock from "../main/components/TimeBlock/TimeBlock";
+import ItemizedBox from "../main/components/ItemizedBox/ItemizedBox";
 let num = 5
 
 function App() {
@@ -21,8 +20,8 @@ function App() {
                         </div>
                     </Col>
                     <Col xs={num} className="quadrant-right">
-                        <div className="CTA">
-                            Fullerton
+                        <div className="Stocks">
+                            Stocks
                         </div>
                     </Col>
                 </Row>
@@ -33,8 +32,8 @@ function App() {
                         </div>
                     </Col>
                     <Col xs={num} className="quadrant-right">
-                        <div className="CTA">
-                            <CtaBox stop="Fullerton" color="Red"/>
+                        <div className="Stocks">
+                            <ItemizedBox stocks={['GME','NOK','BB']}/>
                         </div>
                     </Col>
                 </Row>

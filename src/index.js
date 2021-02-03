@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app/App';
 import * as serviceWorker from './main/util/serviceWorker';
+import {BrowserRouter} from 'react-router-dom';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+          {<App />}
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

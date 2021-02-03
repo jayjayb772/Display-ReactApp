@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import './Forecast.css';
 import styled, {css, keyframes} from 'styled-components';
 import {fadeIn, fadeOut} from "react-animations"
-import ScrollAnimation from 'react-animate-on-scroll';
 import Moment from "react-moment";
 
 ;
@@ -13,9 +12,10 @@ function Forecast(props){
     let direction
     direction= fadeIn
     let [Bounce, setBounce] = useState(styled.div`animation: 4s ${keyframes`${direction}`} ease-in`)
-    let [first, setFirst] = useState(true)
+    //let [first, setFirst] = useState(true)
+    const first = useRef(true)
     function update() {
-        if(first === false){
+        if(first.current === false){
             direction= fadeOut
             const animation = props =>css`4s ${keyframes`${direction}`} ease-in`
             setBounce(styled.div`animation: ${animation}`)
@@ -24,8 +24,7 @@ function Forecast(props){
     };
     useEffect(() => {
         const interval = setInterval(() => {
-            first = false
-            setFirst(false)
+            first.current = false
             update()
         }, (60000*60)-4);
         update()

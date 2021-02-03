@@ -1,28 +1,30 @@
 import SockJS from 'sockjs-client'
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Message from "./message/Message.js";
 import './DiscordBox.css';
 //import {//debugLog} from "../../util///debugLog.js";
 
 function DiscordBox(props) {
-    let i = 0;
     const [messages, setMessages] = useState([])
-    const [isLoaded,setIsLoaded] = useState(false)
+    const [isLoaded, setIsLoaded] = useState(false)
     let url = `${process.env.REACT_APP_SOCKJS}`;
-    let sock = new SockJS(url)
+
+    const sock  = useRef(new SockJS(url));
 
     //DUMB BITCH AT LEAST YOU DIDNT PUSH THE ACTUAL URL
     useEffect(() => {
         let new_conn = function() {
-            sock = new SockJS(url);
+            console.log(url)
+            sock.current = new SockJS(url);
         }
-            sock.onopen = function () {
+            sock.current.onopen = function () {
                 console.log(`OPEN`)
-                sock.send('display open test');
+                sock.current.send('display open test');
+                setIsLoaded(true)
                 //console.log(`setting loaded to true ln22, it is ${isLoaded}`)
             };
 
-            sock.onmessage = function (e) {
+        sock.current.onmessage = function (e) {
                 console.log(`Message`)
                 //console.log(`${e.data}`)
                 if (e.data === "test" || e.data === "display open test") {
@@ -53,7 +55,7 @@ function DiscordBox(props) {
                 //console.log(`Messages after receive length: ${messages.length}`)
             }
 
-            sock.onclose = function () {
+            sock.current.onclose = function () {
                 console.log(`CLOSE`)
                 new_conn()
                 //debugLog("sock.onClose", true)
@@ -62,14 +64,15 @@ function DiscordBox(props) {
         const interval = setInterval(() => {
             console.log(`sock ready state ${sock.readyState}`)
                     //debugLog("trying to send stay alive", false)
-                    sock.send("stay alive-display-board")
+                    sock.current.send("stay alive-display-board")
+                    setIsLoaded(()=>{return true});
                     console.log(`setting loaded to true ln79, it is ${isLoaded}`)
 
         }, 15000);
         return () => clearInterval(interval);
-    }, []);
+    });
 
-    console.log("returning")
+
     return (
         <div className="my-bg">
             {messages.map(m => (
