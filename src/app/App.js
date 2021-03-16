@@ -5,7 +5,7 @@ import CtaBox from "../main/components/CtaBox/CtaBox";
 import WeatherBox from "../main/components/WeatherBox/WeatherBox";
 import DiscordBox from "../main/components/DiscordBox/DiscordBox";
 import TimeBlock from "../main/components/TimeBlock/TimeBlock";
-import ItemizedBox from "../main/components/ItemizedBox/ItemizedBox";
+//import ItemizedBox from "../main/components/ItemizedBox/ItemizedBox";
 let num = 5
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
                         </div>
                     </Col>
                     <Col xs={num} className="quadrant-right">
-                        <div className="Stocks">
-                            Stocks
+                        <div className="CTA">
+                            Fullerton
                         </div>
                     </Col>
                 </Row>
@@ -32,8 +32,8 @@ function App() {
                         </div>
                     </Col>
                     <Col xs={num} className="quadrant-right">
-                        <div className="Stocks">
-                            <ItemizedBox stocks={['GME','NOK','BB']}/>
+                        <div className="CTA">
+                            <CtaBox stop="Fullerton" color="Red"/>
                         </div>
                     </Col>
                 </Row>

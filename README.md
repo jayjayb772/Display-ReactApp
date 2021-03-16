@@ -58,6 +58,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
@@ -120,3 +121,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# docker build
+docker buildx build --platform linux/arm/v7 -t docker.j-bender-portfolio.me/linuxarmv7/display-react-app-image --push .
